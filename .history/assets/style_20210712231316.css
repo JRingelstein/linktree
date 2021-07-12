@@ -83,10 +83,14 @@ body {
     min-height: 100vh;
     min-height: -webkit-fill-available;
     text-align: center;
+    width: 100vw;
 }
 
 @media (min-width: 40rem) {
     body {
+        margin: 10vh auto;
+    }
+    main {
         margin: 10vh auto;
         width: 80%;
     }
@@ -110,20 +114,13 @@ h1 {
 }
 
 h2 {
-    font-size: 1.3em;
+    font-size: 1.4em;
     font-weight: 600;
     text-transform: lowercase;
 }
 
-@media (min-width: 40rem) {
-    h2 {
-        font-size: 1.4em;
-    }
-}
-
 footer {
-    padding-bottom: 2rem;
-    padding-top: 2rem;
+    padding-bottom: 3rem;
 }
 
 footer a {

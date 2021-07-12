@@ -110,15 +110,9 @@ h1 {
 }
 
 h2 {
-    font-size: 1.3em;
+    font-size: 1.4em;
     font-weight: 600;
     text-transform: lowercase;
-}
-
-@media (min-width: 40rem) {
-    h2 {
-        font-size: 1.4em;
-    }
 }
 
 footer {
