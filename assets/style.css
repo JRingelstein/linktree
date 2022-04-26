@@ -178,7 +178,7 @@ footer a {
     overflow: hidden;
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 50rem) {
     .card {
         width: 49%;
     }
