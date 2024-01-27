@@ -1,0 +1,295 @@
+$purple: #8b65e6;
+$dark-purple: #432c82;
+$light-purple: #9c8add;
+$lightest-purple: #beaceb;
+$white: #fff;
+$base-size: 16px;
+$copy: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+$heading: 'Space Mono', 'Courier New', monospace;
+$gap: 1rem;
+
+@mixin headings {
+    font-family: $heading;
+    font-style: italic;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Space Mono';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Space Mono'), url('fonts/space-mono-v6-latin-700.woff2') format('woff2'),
+        url('fonts/space-mono-v6-latin-700.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Space Mono';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Space Mono'), url('fonts/space-mono-v6-latin-700italic.woff2') format('woff2'),
+        url('fonts/space-mono-v6-latin-700italic.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Work Sans'), url('fonts/work-sans-v8-latin-ext_latin-regular.woff2') format('woff2'),
+        url('fonts/work-sans-v8-latin-ext_latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Work Sans'), url('fonts/work-sans-v8-latin-ext_latin-700.woff2') format('woff2'),
+        url('fonts/work-sans-v8-latin-ext_latin-700.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Work Sans';
+    font-style: italic;
+    font-weight: 400;
+    src: local('Work Sans'), url('fonts/work-sans-v8-latin-ext_latin-italic.woff2') format('woff2'),
+        url('fonts/work-sans-v8-latin-ext_latin-italic.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Work Sans';
+    font-style: italic;
+    font-weight: 700;
+    src: local('Work Sans'), url('fonts/work-sans-v8-latin-ext_latin-700italic.woff2') format('woff2'),
+        url('fonts/work-sans-v8-latin-ext_latin-700italic.woff') format('woff');
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    height: -webkit-fill-available;
+}
+
+body {
+    background: $lightest-purple;
+    background-repeat: no-repeat;
+    background: radial-gradient(circle, $lightest-purple 0%, $purple 54%);
+    color: $white;
+    font-family: $copy;
+    font-size: $base-size;
+    margin: 5vh 5vw;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+h1 {
+    @include headings;
+
+    color: transparent;
+    font-size: 0;
+    margin-bottom: 2vh;
+    text-align: center;
+}
+
+@media (min-width: 40rem) {
+    h1 {
+        margin-bottom: 10vh;
+    }
+}
+
+h2,
+.h2 {
+    @include headings;
+    font-size: 1.5rem;
+    text-align: center;
+    text-transform: lowercase;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: $white;
+    cursor: pointer;
+    display: block;
+    font-weight: 700;
+    padding: 1rem;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transform: scale(1);
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+    background-color: $purple;
+    border-color: $white;
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        color: $purple;
+        transform: scale(1.05);
+    }
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $gap;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+    @media (min-width: 40rem) {
+        margin-bottom: 4rem;
+    }
+
+    .card {
+        background-color: $white;
+        border-radius: 0.25rem;
+        box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+        display: flex;
+        flex: 0 1 calc(50% - $gap);
+        flex-direction: row;
+        overflow: hidden;
+
+        @media (max-width: 75rem) {
+            flex-basis: 100%;
+        }
+
+        &_image {
+            align-items: center;
+            display: flex;
+            flex: 1 1;
+            justify-content: center;
+            overflow: hidden;
+
+            img {
+                min-height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        &_content {
+            flex: 2 1;
+            padding: 1rem;
+
+            @media (max-width: 40rem) {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+        }
+
+        &_title {
+            @include headings;
+
+            color: $purple;
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin: 0;
+
+            @media (max-width: 40rem) {
+                text-align: center;
+            }
+        }
+
+        &_text {
+            color: #333;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            margin-bottom: 1.25rem;
+
+            @media (max-width: 40rem) {
+                display: none;
+            }
+        }
+
+        &_btn {
+            @media (max-width: 40rem) {
+                background: transparent;
+                border: none;
+                color: $purple;
+                padding: 0;
+                transform: none;
+
+                &:hover {
+                    transform: none;
+                }
+            }
+
+            @media (min-width: 40rem) {
+                &:hover {
+                    border: 2px solid $purple;
+                    transform: scale(1.03);
+                }
+            }
+        }
+    }
+}
+
+#links {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+    list-style: none;
+    margin-bottom: 2rem;
+    padding-left: 0;
+
+    @media (min-width: 40rem) {
+        margin-bottom: 4rem;
+    }
+}
+
+.channels {
+    display: flex;
+    gap: $gap;
+    justify-content: center;
+
+    img {
+        width: 2.75rem;
+    }
+
+    &__item {
+        transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.circle {
+    position: absolute;
+    top: -60px;
+    right: -80px;
+    width: 220px;
+    height: 220px;
+    border-radius: 110px;
+    background: linear-gradient(to right, rgba(162, 255, 250, 0.8), $white);
+    transition: all 250ms ease-out;
+    -webkit-transition-delay: 50ms;
+    transition-delay: 50ms;
+    z-index: -1;
+
+    @media only screen and (min-width: 770px) {
+        top: -145px;
+        right: -100px;
+        width: 350px;
+        height: 350px;
+        border-radius: 175px;
+    }
+}
+
+footer {
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+    text-align: center;
+    a {
+        color: $white;
+    }
+}
